@@ -39,7 +39,7 @@
         // Animaciones
         UIViewAnimationOptions option = UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseInOut;
         
-        
+        // 1. Muevo el xwing de su punto origen a donde hago tap con el dedo
         [UIView animateWithDuration:1.2 delay:0 options:option animations:^{
             self.xwingView.center = [tap locationInView:self.view];
             
@@ -47,7 +47,7 @@
             
         }];
         
-        
+        // 2. A la vez se lanza esta otra anim. que rota la imagen.
         [UIView animateWithDuration:0.6 delay:0 options:option animations:^{
             self.xwingView.transform = CGAffineTransformMakeRotation(M_PI_2);
         } completion:^(BOOL finished) {
