@@ -33,7 +33,17 @@
     if (tap.state == UIGestureRecognizerStateRecognized) {
         // cambiamos la posicion de la vista del xwing
         
-        self.xwingView.center = [tap locationInView:self.view];
+        //self.xwingView.center = [tap locationInView:self.view];
+        
+        
+        UIViewAnimationOptions option = UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseInOut;
+        
+        
+        [UIView animateWithDuration:1.2 delay:0 options:option animations:^{
+            self.xwingView.center = [tap locationInView:self.view];
+        } completion:^(BOOL finished) {
+            
+        }];
         
     }
 }
